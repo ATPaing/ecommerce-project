@@ -1,0 +1,510 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    min-height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+    overflow-x: hidden;
+}
+main{
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+nav{
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    align-items: center;
+    border-bottom: 2px solid #88BF87;
+    box-shadow: 0px 0px 10px rgb(151, 143, 143);
+}
+
+.logo{
+    font-family: 'Luckiest Guy', cursive;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 2em;
+    cursor: pointer;
+    position: relative; 
+    transition: all 200ms linear;  
+    margin-left: 25px;
+}
+.logo:hover{
+    transform: translateY(-10px);
+}
+
+.logo:after{
+    display: none;
+    content: 'FAKE STORE';
+    position: absolute;
+    width: 50%;
+    height: 90%;  
+    text-align: center;
+    color: hsl(0 39% 46% / 0.2);
+    top: 90%;
+    left: 50%;
+    transform: perspective(1em) rotateX(10deg)  translateX(-60%) scale(2.2,0.5);
+}
+.logo:hover::after{
+    display: block;
+}
+.logo p:first-child{
+    color: #A44848;
+    font-size: 40px;
+    transition: all 200ms linear;
+}
+.logo:hover p:first-child{
+    text-shadow: 0 0 1px #88BF87;
+    letter-spacing: 5px;
+}
+.logo p:last-child{
+    font-size: 30px;
+    color: #88BF87;
+    margin-top: -20px;
+    transition: all 200ms linear;
+}
+.logo:hover p:last-child{
+    text-shadow: 0 0 1px #a85f5f;
+    letter-spacing: 5px;
+}
+.nav-right{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    margin-right: 30px;
+}
+@media (max-width: 680px) {
+    .nav-right{
+        margin-right: 0;
+    }
+}
+.link a,.login a{
+    border-radius: 10px;
+    display: inline-block;
+    padding-inline: 1em;
+    padding-block: 0.5em;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: black;
+    transition: all 200ms linear;
+}
+.link a:hover{
+    background-color: #88BF87;
+    color: white;
+}
+
+.cart {
+    font-size: 1.6rem;
+    margin-top: 5px;
+}
+@media (max-width: 680px) {
+    .cart-btn{
+        display: none;
+    }
+}
+.search-bar.search-bar{
+    position: relative;
+    background-color: transparent;
+    border:1px solid #88BF87;
+    background-color: #88BF87;
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 0;
+    transition: width 360ms cubic-bezier(.36,-0.57,.47,1.45);
+}
+
+.active-search-bar.active-search-bar{
+    width: 225px;
+    z-index: 0;
+}
+.search-bar img{
+    z-index:1;
+    position: absolute;
+    padding: 0.7em;
+    inset: 0;
+    width: 45px;
+    height: 45px;
+    filter: invert(1%) sepia(1%) saturate(1%) hue-rotate(10deg) brightness(10000%) contrast(100%);
+}
+.search-bar:hover img{
+    filter:unset;
+}
+.search-bar:hover{
+    background-color: transparent;
+    border:3px solid #88BF87;
+}
+.text-input{
+    z-index:-1;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 45px);
+    height: 100%;
+    border-radius: 0 8px 8px 0 ;
+    font-size: 1.1rem;
+}
+.login{
+    width: max-content;
+    border:3px solid transparent;
+    border-radius: 8px;
+    background-color: #88BF87;
+}
+@media (max-width: 680px) {
+    .login{
+        display: none;
+    }
+}
+.login:hover{
+    background-color: transparent;
+    border:3px solid #88BF87;
+    color: black;
+}
+.login:hover a{
+    color: black;
+}
+.login a{
+    color: white;
+}
+.hamburger{
+    display: none;
+    border: 2px solid transparent;
+    background-color: #88BF87;
+    padding: 0.5em;
+    border-radius: 8px;
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: all 230ms linear;
+}
+@media (max-width: 680px) {
+    .hamburger{
+        display: block;
+    }
+}
+.hamburger:hover{
+    background-color: white;
+    border-color: #88BF87;
+}
+.hamburger:hover path{
+    fill: #88BF87;
+}
+/* top rating */
+.top-ratings{
+    position: relative;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2em; 
+    overflow: hidden;
+    margin-bottom: 3em;
+    border-radius: 10px;
+}
+.id{
+    display: none;
+    transform: scale(0);
+}
+.top-ratings > p:first-child,.all-items-top {
+    width: max-content;
+    font-size: 2rem;
+    margin-left: 30px;
+    border: 1px solid  #88BF87;
+    border-radius: 10px;
+    padding: 0.5em 1em ;
+    user-select: none;
+    box-shadow: 2px 2px 10px #5c755b;
+    margin-bottom: 2em;
+}
+.top-items-list{
+    margin-left: 75px;
+    display: flex;
+    justify-content: center;
+    gap: 5em;
+    transition: all 200ms linear;
+}
+.rating-items{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    cursor: pointer;
+    border: 3px solid #88BF87;
+    padding: 1em;
+    box-shadow: 0 0 15px transparent;
+    transition: all 200ms ease-in-out;
+}
+.rating-items:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 0 18px rgb(128, 123, 123);
+}
+.top-items{
+    width: 90px;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    margin-inline: auto;
+}
+.top-items img{
+    width: 100%;
+    height: 100%;
+}
+.price-and-rating{
+    display: flex;
+}
+.rating-star{
+    margin-left: auto;
+    margin-right: 5px;
+}
+.mover{
+    display: none;
+    position: absolute;
+    background-color: hsl(119 30% 64% / 0.7);
+    padding: 0.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 200ms linear;
+
+}
+.mover:hover{
+    transform: translateY(-10px);
+    background-color: hsl(119 30% 64% / 0.9);
+}
+.top-rating-mover-right{
+    top: 60%;
+    left: 94vw;
+}
+@media (max-width: 1090px) {
+    .top-rating-mover-right{
+        top: 60%;
+        left: 94vw;
+        transform: translateX(-100%);
+    }
+}
+@media (max-width: 1090px) {
+    .top-rating-mover-right:hover{
+        transform: translateX(-100%) translateY(-10px);
+    }
+}
+.top-rating-mover-left{
+    left: 25px;
+    top: 60%;
+    transform: rotate(180deg);
+}
+.top-rating-mover-left:hover{
+    transform:rotate(180deg) translateY(10px) ;
+}
+
+
+
+/* Item gallery */
+.all-items{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-top: 2px solid #88BF87;
+    padding-top: 3em;
+}
+@media(max-width: 680px) {
+    .all-items{
+       align-items: center;
+    }
+}
+.all-items-top{
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+@media(max-width: 680px) {
+    .all-items-top{
+       flex-direction: column;
+    }
+}
+.all-items-filter{
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.3em 0.6em;
+    border-radius: 10px;
+}
+label{
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+select{
+    margin-top: 5px;
+    width: max-content;
+    height: max-content;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    padding: 0.3em;
+    cursor: pointer;
+}
+.all-items-holder{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5em;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1em;
+}
+footer{
+     width: 100vw;
+     min-height: 200px;
+     height: max-content;
+     padding: 2em;
+     padding-inline: 4em;
+     background-color: rgb(154, 118, 221);
+     display: flex;
+     gap: 2em;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+     box-shadow: 0 5px 15px rgb(68, 66, 66);
+}
+
+.footer-logo{
+    font-family: 'Luckiest Guy', cursive;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-left: 2em;
+    cursor: pointer;
+    position: relative; 
+    transition: all 200ms linear ;
+    margin-left: 25px;
+
+}
+.footer-logo:hover{
+    transform: translateY(-10px);
+}
+.footer-logo p:first-child{
+    color: #f00d0d;
+    font-size: 70px;
+    transition: all 200ms linear;
+}
+.footer-logo:hover p:first-child{
+    text-shadow: 0 0 1px #88BF87;
+    letter-spacing: 5px;
+}
+.footer-logo p:last-child{
+    font-size: 50px;
+    color: #60cf5e;
+    margin-top: -20px;
+    transition: all 200ms linear;
+}
+.footer-logo:hover p:last-child{
+    text-shadow: 0 0 1px #a85f5f;
+    letter-spacing: 5px;
+}
+.contact{
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    margin-inline: auto;
+}
+.contact-top,.contact-bottom{
+    display: flex;
+    gap: 2em;
+}
+.contact-top i{
+    font-size: 2.5rem;
+    color:#f8f8f8; 
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 250ms linear;
+}
+.contact-top i:hover{
+    transform: translateY(-7px);
+    color: #383294;
+}
+.contact-bottom{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.weekely-email{
+    padding: 0.5em;
+    font-size: 1.2rem;
+    border-radius: 5px;
+}
+.weekely-email-submit{
+    padding: 0.5em;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.hamburger-page{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1em;
+    background-color: #88BF87;
+    width: 100%;
+    height: 16vh;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    transform: translateX(100%); 
+    transition: all 250ms linear;
+}
+.hamburger-page-active{
+    transform: translateX(0%);
+}
+.hamburger-page__cart {
+    font-size: 1.6rem;
+    margin-top: 5px;
+}
+.hamburger-page__login{
+    width: max-content;
+    border:3px solid transparent;
+    border-radius: 8px;
+    background-color: #88BF87;
+}
+.hamburger-page__login a{
+    border-radius: 10px;
+    display: inline-block;
+    padding-inline: 1em;
+    padding-block: 0.5em;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: bolder;
+    color: black;
+    transition: all 200ms linear;
+}
+.hamburger-page__login a:hover,.hamburger-page__cart a:hover{
+    background-color: transparent;
+}
+
+.hamburger-page__close-btn{
+    display: block;
+    margin-left: auto;
+    border: 2px solid transparent;
+    padding: 0.5em;
+    transform: scale(1.5);
+    cursor: pointer;
+}
+.hamburger-page__close-btn path{
+    transition: all 230ms linear;
+}
+
+.hamburger-page__close-btn:hover path{
+    fill: white;
+}
+
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeStore</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <nav>
+            <div class="logo">
+                <p>FAKE</p>
+                <p>STORE</p>
+            </div>
+            <div class="nav-right">
+                <div class=" cart-btn link">
+                    <a href="add-to-cart.html">
+                        <i class="fa-solid fa-cart-shopping cart"></i>
+                    </a>
+                </div>
+                <div class="search-bar link">
+                    <img class="search-bar-image" src="images/search.png" alt="search bar icon">
+                    <input type="text" class="text-input">
+                 </div>
+                <div class="login">
+                    <a href="#">Log In</a>
+                </div>
+                <div class="hamburger">
+                    <svg width="20" height="14" xmlns="http://www.w3.org/2000/svg"><path d="M20 12v2H0v-2h20zm0-6v2H0V6h20zm0-6v2H0V0h20z" fill="#FFF" fill-rule="evenodd"/></svg>
+                </div>
+            </div>
+
+        </nav>
+        <section class="top-ratings">
+            <p>Top Rated Items</p>
+            <div class="top-items-list"></div>
+        <div class="top-rating-mover-right mover">
+            <svg width="35" height="35" viewBox="0 0 144 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill='white' d="M79.2674 107.555L1.1321 185.691L32.9519 217.51L143.261 107.202L37.5481 1.4894L5.37474 33.6628L79.2674 107.555Z" stroke="black"/>
+            </svg>
+        </div>
+        <div class="top-rating-mover-left mover">
+            <svg width="35" height="35" viewBox="0 0 144 219" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill='white' d="M79.2674 107.555L1.1321 185.691L32.9519 217.51L143.261 107.202L37.5481 1.4894L5.37474 33.6628L79.2674 107.555Z" stroke="black"/>
+            </svg>
+        </div>
+        </section>
+
+        <section class="all-items">
+            <div class="all-items-top">
+                <p>Item Gallery</p>
+                <div class="all-items-filter">
+                    <label>Filter: </label>
+                    <select>                       
+                        <option value="electronics">Electronics</option>
+                        <option value="jewelery">Jewelery</option>
+                        <option value="men's clothing">Men's clothing</option>
+                        <option value="women's clothing">Women's clothing</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="all-items-holder">
+
+            </div>
+        </section>
+        <footer>
+            <div class="footer-logo">
+                <p>FAKE</p>
+                <p>STORE</p>
+            </div>
+            <div class="contact">
+                <div class="contact-top">
+                   <a href="#">
+                    <i class="fa-brands fa-facebook-square"></i>
+                   </a>                
+                   <a href="#">
+                    <i class="fa-brands fa-instagram-square"></i>
+                   </a>                
+                   <a href="#">
+                    <i class="fa-brands fa-twitter-square"></i>
+                   </a>
+                   
+                </div>
+                <form class="contact-bottom">
+                    <input type="email" class="weekely-email" placeholder="for weekly newspaper">
+                    <input type="submit" class="weekely-email-submit" value="Submit Email">
+                </form>
+            </div>
+        </footer>
+
+        <div class="hamburger-page">
+            <div class=" hamburger-page__cart-btn link">
+                <a href="add-to-cart.html">
+                    <i class="fa-solid fa-cart-shopping hamburger-page__cart"></i>
+                </a>
+            </div>
+            <div class="hamburger-page__login link">
+                <a href="#">Log In</a>
+            </div>
+            <div class="hamburger-page__close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15"><path fill="black" fill-rule="evenodd" d="M8 5.379L13.303.075l2.122 2.122L10.12 7.5l5.304 5.303-2.122 2.122L8 9.62l-5.303 5.304-2.122-2.122L5.88 7.5.575 2.197 2.697.075 8 5.38z"/></svg>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+    <script src="main.js"></script>
+</html>
